@@ -40,10 +40,14 @@ class Ympyra {
 	public Ympyra(double sade) {
         this.sade = sade;
 	}
+
+// Lisätty parametriton muodostin, Elina
+    public Ympyra() {
+        sade=0;
+    }
 	
     public void laskePintaAla() {
         double tulos =  3.14159 * (sade * sade);
         System.out.printf("Ympyrän pinta-ala on: " + "%.2f%n", tulos);
 	}
 }
- 
