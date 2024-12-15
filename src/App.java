@@ -16,20 +16,49 @@ public class App {
         Ympyra ympyraP = new Ympyra(sade);
         ympyraP.laskePintaAla();
 
+        // input.close();
+        //Elias totesi että ei voi tuoda uutta scanneria niin käytin samaa. 
+
+        
+
+        System.out.println("Anna uima-altaan leveys metreinä");
+        double width = input.nextDouble();
+
+        System.out.println("Anna uima-altaan pituus metreinä");
+        double length = input.nextDouble();
+
+        System.out.println("Anna uima-altaan syvyys metreinä");
+        double depth = input.nextDouble();
+
+        SwimPool pool = new SwimPool(width, length, depth);
+        System.out.println("uima-altaan tilavuus: " + pool.calcVol() + "m3.");
+
         input.close();
+
+
     
     }
 }
-class swimPool {
 
-    public int width;
-    public int length;
+//Elias tehnyt kaavan jolla laskea uima-altaan tilavuus (mikäli neliön muotoinen)
+class SwimPool {
 
-    public Pool(int w, int l);
+    private double width;
+    private double length;
+    private double depth;
+
+    public SwimPool(double w, double l, double d)
     {
         width = w;
         length = l;
+        depth = d;
 
+    }
+   
+
+    public double calcVol() {
+
+        return width * length * depth;
     }
 }
 
