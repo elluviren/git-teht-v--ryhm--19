@@ -16,6 +16,9 @@ public class App {
         Ympyra ympyraP = new Ympyra(sade);
         ympyraP.laskePintaAla();
 
+        // lisätty tulostamisen kutsuminen, Elina
+        ympyraP.printData();
+
         input.close();
     
     }
@@ -50,4 +53,9 @@ class Ympyra {
         double tulos =  3.14159 * (sade * sade);
         System.out.printf("Ympyrän pinta-ala on: " + "%.2f%n", tulos);
 	}
+
+// Lisätty tulosta tiedot-metodi, Elina
+    public void printData() {
+        System.out.println("Ympyrän säde on: " + sade);
+    }
 }
