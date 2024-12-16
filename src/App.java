@@ -35,6 +35,14 @@ public class App {
         SwimPool pool = new SwimPool(width, length, depth);
         System.out.println("uima-altaan tilavuus: " + pool.calcVol() + "m3.");
 
+        //Kysytään käyttäjältä vedenhinta, Lotta
+        System.out.println("Anna veden hinta per litra: ");
+        double pricePerLiter = input.nextDouble();
+
+        double totalCost = pool.calcFillCost(pricePerLiter);
+        System.out.printf("Uima-altaan täyttöhinta: %.1f€%n", totalCost);
+
+
         input.close();
 
 
@@ -62,8 +70,13 @@ class SwimPool {
 
         return width * length * depth;
     }
-}
 
+    //Metodi täyttöhinnan laskemiseen, Lotta
+    public double calcFillCost(double pricePerLiter) {
+        double volumeLiters = calcVol() * 1000; 
+        return volumeLiters * pricePerLiter;
+    }
+}
 // Janin lisäämä Ympyrä luokka ja ympyrän pinta-alan laskenta
 class Ympyra {
 	private double sade;
